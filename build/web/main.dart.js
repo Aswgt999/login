@@ -14,12 +14,12 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const app = flutter_sdk.src__material__app;
   const theme_data = flutter_sdk.src__material__theme_data;
   const colors = flutter_sdk.src__material__colors;
-  const framework = flutter_sdk.src__widgets__framework;
   const scaffold = flutter_sdk.src__material__scaffold;
   const app_bar = flutter_sdk.src__material__app_bar;
-  const text = flutter_sdk.src__widgets__text;
   const back_button = flutter_sdk.src__material__back_button;
   const basic = flutter_sdk.src__widgets__basic;
+  const text = flutter_sdk.src__widgets__text;
+  const framework = flutter_sdk.src__widgets__framework;
   const text_style = flutter_sdk.src__painting__text_style;
   const colors$ = flutter_sdk.src__painting__colors;
   const text_field = flutter_sdk.src__material__text_field;
@@ -181,7 +181,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     },
     get C16() {
       return C[16] = dart.const({
-        __proto__: main.MyApp.prototype,
+        __proto__: main.MyWidget.prototype,
         [Widget_key]: null
       });
     }
@@ -219,62 +219,6 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         }, T.VoidToNull())});
     });
   };
-  main.MyApp = class MyApp extends framework.StatelessWidget {
-    static ['_#new#tearOff'](opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      return new main.MyApp.new({key: key});
-    }
-    build(context) {
-      return new app.MaterialApp.new({title: "Log in Page", theme: theme_data.ThemeData.new({colorSchemeSeed: colors.Colors.indigo, useMaterial3: true, brightness: ui.Brightness.light}), darkTheme: theme_data.ThemeData.new({colorSchemeSeed: colors.Colors.blue, useMaterial3: true, brightness: ui.Brightness.dark}), debugShowCheckedModeBanner: false});
-    }
-  };
-  (main.MyApp.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    main.MyApp.__proto__.new.call(this, {key: key});
-    ;
-  }).prototype = main.MyApp.prototype;
-  dart.addTypeTests(main.MyApp);
-  dart.addTypeCaches(main.MyApp);
-  dart.setMethodSignature(main.MyApp, () => ({
-    __proto__: dart.getMethods(main.MyApp.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(main.MyApp, I[0]);
-  var title$ = dart.privateName(main, "MyHomePage.title");
-  main.MyHomePage = class MyHomePage extends framework.StatefulWidget {
-    get title() {
-      return this[title$];
-    }
-    set title(value) {
-      super.title = value;
-    }
-    static ['_#new#tearOff'](opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      let title = opts && 'title' in opts ? opts.title : null;
-      return new main.MyHomePage.new({key: key, title: title});
-    }
-    createState() {
-      return new main._MyHomePageState.new();
-    }
-  };
-  (main.MyHomePage.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let title = opts && 'title' in opts ? opts.title : null;
-    this[title$] = title;
-    main.MyHomePage.__proto__.new.call(this, {key: key});
-    ;
-  }).prototype = main.MyHomePage.prototype;
-  dart.addTypeTests(main.MyHomePage);
-  dart.addTypeCaches(main.MyHomePage);
-  dart.setMethodSignature(main.MyHomePage, () => ({
-    __proto__: dart.getMethods(main.MyHomePage.__proto__),
-    createState: dart.fnType(framework.State$(main.MyHomePage), [])
-  }));
-  dart.setLibraryUri(main.MyHomePage, I[0]);
-  dart.setFieldSignature(main.MyHomePage, () => ({
-    __proto__: dart.getFields(main.MyHomePage.__proto__),
-    title: dart.finalFieldType(core.String)
-  }));
   var Widget_key = dart.privateName(framework, "Widget.key");
   var Text_selectionColor = dart.privateName(text, "Text.selectionColor");
   var Text_textHeightBehavior = dart.privateName(text, "Text.textHeightBehavior");
@@ -321,25 +265,27 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var Text_style = dart.privateName(text, "Text.style");
   var Text_textSpan = dart.privateName(text, "Text.textSpan");
   var Text_data = dart.privateName(text, "Text.data");
-  main._MyHomePageState = class _MyHomePageState extends framework.State$(main.MyHomePage) {
-    build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new(this.widget.title), leading: new back_button.BackButton.new({color: colors.Colors.red})}), body: new basic.Column.new({children: T.JSArrayOfWidget().of([C[1] || CT.C1, new basic.SizedBox.new({height: 20}), new text_field.TextField.new({decoration: new input_decorator.InputDecoration.new({filled: true, fillColor: colors.Colors.white})}), new basic.SizedBox.new({height: 20}), new text_field.TextField.new({decoration: new input_decorator.InputDecoration.new({filled: true, fillColor: colors.Colors.white})}), new basic.SizedBox.new({height: 20}), new text_button.TextButton.new({style: text_button.TextButton.styleFrom({backgroundColor: colors.Colors.red}), onPressed: null, child: new text.Text.new("Log In", {style: new text_style.TextStyle.new({color: colors.Colors.white})})}), new basic.SizedBox.new({height: 20}), new text.Text.new("OR", {style: new text_style.TextStyle.new({color: colors.Colors.white})}), new basic.SizedBox.new({height: 20}), new text_button.TextButton.new({style: text_button.TextButton.styleFrom({backgroundColor: colors.Colors.indigo}), onPressed: null, child: new text.Text.new("Facebook Login", {style: new text_style.TextStyle.new({color: colors.Colors.white})})})])})});
+  main.MyWidget = class MyWidget extends framework.StatelessWidget {
+    static ['_#new#tearOff'](opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      return new main.MyWidget.new({key: key});
     }
-    static ['_#new#tearOff']() {
-      return new main._MyHomePageState.new();
+    build(context) {
+      return new app.MaterialApp.new({theme: theme_data.ThemeData.new({colorSchemeSeed: colors.Colors.indigo, useMaterial3: true, brightness: ui.Brightness.light}), darkTheme: theme_data.ThemeData.new({colorSchemeSeed: colors.Colors.blue, useMaterial3: true, brightness: ui.Brightness.dark}), debugShowCheckedModeBanner: false, home: new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({leading: new back_button.BackButton.new({color: colors.Colors.red})}), body: new basic.Column.new({children: T.JSArrayOfWidget().of([C[1] || CT.C1, new basic.SizedBox.new({height: 20}), new text_field.TextField.new({decoration: new input_decorator.InputDecoration.new({filled: true, fillColor: colors.Colors.white})}), new basic.SizedBox.new({height: 20}), new text_field.TextField.new({decoration: new input_decorator.InputDecoration.new({filled: true, fillColor: colors.Colors.white})}), new basic.SizedBox.new({height: 20}), new text_button.TextButton.new({style: text_button.TextButton.styleFrom({backgroundColor: colors.Colors.red}), onPressed: null, child: new text.Text.new("Log In", {style: new text_style.TextStyle.new({color: colors.Colors.white})})}), new basic.SizedBox.new({height: 20}), new text.Text.new("OR", {style: new text_style.TextStyle.new({color: colors.Colors.white})}), new basic.SizedBox.new({height: 20}), new text_button.TextButton.new({style: text_button.TextButton.styleFrom({backgroundColor: colors.Colors.indigo}), onPressed: null, child: new text.Text.new("Facebook Login", {style: new text_style.TextStyle.new({color: colors.Colors.white})})})])})})});
     }
   };
-  (main._MyHomePageState.new = function() {
-    main._MyHomePageState.__proto__.new.call(this);
+  (main.MyWidget.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    main.MyWidget.__proto__.new.call(this, {key: key});
     ;
-  }).prototype = main._MyHomePageState.prototype;
-  dart.addTypeTests(main._MyHomePageState);
-  dart.addTypeCaches(main._MyHomePageState);
-  dart.setMethodSignature(main._MyHomePageState, () => ({
-    __proto__: dart.getMethods(main._MyHomePageState.__proto__),
+  }).prototype = main.MyWidget.prototype;
+  dart.addTypeTests(main.MyWidget);
+  dart.addTypeCaches(main.MyWidget);
+  dart.setMethodSignature(main.MyWidget, () => ({
+    __proto__: dart.getMethods(main.MyWidget.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(main._MyHomePageState, I[0]);
+  dart.setLibraryUri(main.MyWidget, I[0]);
   main.main = function main$0() {
     binding.runApp(C[16] || CT.C16);
   };
@@ -350,7 +296,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     "file:///zapp/project/lib/main.dart": main,
     "file:///zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart": web_plugin_registrant
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2CI,IA1BF,iCAAgB;AACd,UAAoB,6BAGD;AAF8B,QAA9B,AAAkB,6BAElB,eAF2B;;AAEL,QAAF,CAApB;;AAEnB,UAAO,AAAQ,uBAAY;AAKvB,QAJK,AAAqC,qBAA7B,qCAAuB,uBAAW,QAAC;AAG9C,UAFC,AAAQ,sBAAW,2BAA2B,CAC/C;;;wBAIL,SAAC,GAAG;AACL,UAAO,AAAQ,uBAAY;AAIvB,QAHC,AAAQ,sBAAW,wBAAwB,CAC5C,AAAE,CAAD,eACD,AAAW,UAAD;;2DAGM,yCACb,SAAC,MAAM,QAAQ,MAAM;AAC1B,cAAO,AAAQ,uBAAY;AAC4B,YAAlD,AAAQ,sBAAW,wBAAwB,CAAC,IAAI;;;EAI3D;;AAEiB;AAQd,MAPD,MAAS,gCACC;AACS,UAAf;6CAEe;AACmB,UAAjB;;IAGvB;;;;;;;UC7C4B;AACxB,YAAO,iCACE,sBACA,2CACmB,oCACV,kBACS,kCAEd,2CACe,kCACV,kBACS,kDAEG;IAEhC;;;QAlBmB;AAAb,8CAAa,GAAG;;EAAE;;;;;;;;;;IAyBX;;;;;;;;;;;;AAGsB;IAAkB;;;QAL7B;QAAmB;;AAArC,mDAAkB,GAAG;;EAAuB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAWxB;AACxB,YAAO,oCACG,+BACC,kBAAK,AAAO,6BACV,uCACO,6BAGZ,gCACO,uCAQH,gCAAiB,MACrB,0CACc,iDACF,iBACU,yBAElB,gCAAiB,MACrB,0CACc,iDACF,iBACU,yBAGtB,gCAAiB,MACjB,uCACoB,mDAAkC,gCACzC,aACJ,kBACL,kBACO,qCACS,2BAIpB,gCAAiB,MACjB,kBACE,cACO,qCACS,yBAGd,gCAAiB,MACrB,uCACoB,mDAAkC,mCACzC,aACJ,kBACL,0BACO,qCACS;IAO9B;;;;;;;;EACF;;;;;;;;;AArGuB,IAArB;EACF;;ECGwB","file":"main.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2CI,IA1BF,iCAAgB;AACd,UAAoB,6BAGD;AAF8B,QAA9B,AAAkB,6BAElB,eAF2B;;AAEL,QAAF,CAApB;;AAEnB,UAAO,AAAQ,uBAAY;AAKvB,QAJK,AAAqC,qBAA7B,qCAAuB,uBAAW,QAAC;AAG9C,UAFC,AAAQ,sBAAW,2BAA2B,CAC/C;;;wBAIL,SAAC,GAAG;AACL,UAAO,AAAQ,uBAAY;AAIvB,QAHC,AAAQ,sBAAW,wBAAwB,CAC5C,AAAE,CAAD,eACD,AAAW,UAAD;;2DAGM,yCACb,SAAC,MAAM,QAAQ,MAAM;AAC1B,cAAO,AAAQ,uBAAY;AAC4B,YAAlD,AAAQ,sBAAW,wBAAwB,CAAC,IAAI;;;EAI3D;;AAEiB;AAQd,MAPD,MAAS,gCACC;AACS,UAAf;6CAEe;AACmB,UAAjB;;IAGvB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UC3C4B;AACxB,YAAO,iCACE,2CACmB,oCACV,kBACS,kCAEd,2CACe,kCACV,kBACS,kDAEG,aACtB,mCACE,iCACG,uCACO,6BAGZ,gCACO,uCAQH,gCAAiB,MACrB,0CACc,iDACF,iBACU,yBAElB,gCAAiB,MACrB,0CACc,iDACF,iBACU,yBAGtB,gCAAiB,MACjB,uCACoB,mDAAkC,gCACzC,aACJ,kBACL,kBACO,qCACS,2BAIpB,gCAAiB,MACjB,kBACE,cACO,qCACS,yBAGd,gCAAiB,MACrB,uCACoB,mDAAkC,mCACzC,aACJ,kBACL,0BACO,qCACS;IAQ9B;;;QA7EsB;AAAhB,iDAAgB,GAAG;;EAAE;;;;;;;;;AANH,IAAxB;EACF;;ECGwB","file":"main.js"}');
   // Exports:
   return {
     zapp__project__$46zapp_entry: $46zapp_entry,
